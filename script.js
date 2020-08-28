@@ -72,10 +72,12 @@ for (let i = 0; i < tools.length; i++) {
    console.log(tool)
    toolbar.appendChild(tool)
 }
-
+let title = document.createElement('div')
+title.classList.add('title');
+title.innerHTML= "Inventory";
+toolbar.appendChild(title)
 let inventory = document.createElement('div');
 inventory.classList.add('inventory')
-inventory.innerHTML = 'X 0'
 toolbar.appendChild(inventory)
 
 

@@ -60,26 +60,89 @@ for (let row = 0; row < matrix.length; row++) {
     }
 }
 
-// -----------------Tםםך--------------------------------
+// -----------------TOOLS--------------------------------
 let tools= ['axe','pickaxe', 'shovel']
 let toolbar = document.querySelector('.toolbar');
+let toolTitle = document.createElement('div')
+toolTitle.classList.add('tool-title');
+toolTitle.innerHTML= "Tools";
+toolbar.appendChild(toolTitle)
 
 for (let i = 0; i < tools.length; i++) {
     let tool = document.createElement('div');
     tool.classList.add('tool')
     tool.setAttribute("id",tools[i])
-
-   console.log(tool)
    toolbar.appendChild(tool)
 }
+
 let title = document.createElement('div')
-title.classList.add('title');
+title.classList.add('inventory-title');
 title.innerHTML= "Inventory";
 toolbar.appendChild(title)
+
 let inventory = document.createElement('div');
 inventory.classList.add('inventory')
 toolbar.appendChild(inventory)
 
+// --------------------------Functions----------------------
+// AXE FUNC
+let axeChoose = document.getElementById('axe');
+axeChoose.addEventListener('click', axe);
+
+function axe(){
+    console.log('here')
+    let treeTrunckSelect = document.querySelectorAll('#treetrunk');
+    for (let i = 0; i < treeTrunckSelect.length; i++) {
+        treeTrunckSelect[i].addEventListener('click',(event) =>{
+         if(event.target.id) {
+            treeTrunckSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
+             document.querySelector('.inventory').style.background= "url(./img/treeTrunck.png)no-repeat center center/cover";
+         }       
+    });
+    }
+}
+// PICKAXE FUNC
+let pickaxeTool = document.getElementById('pickaxe');
+pickaxeTool.addEventListener('click', pickaxe);
+
+function pickaxe(){
+    console.log('here')
+    let stoneSelect = document.querySelectorAll('#stone');
+    for (let i = 0; i < stoneSelect.length; i++) {
+        stoneSelect[i].addEventListener('click',(event) =>{
+         if(event.target.id) {
+            stoneSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
+             document.querySelector('.inventory').style.background= "url(./img/stone.png)no-repeat center center/cover";
+         }       
+    });
+    }
+}
+
+// SHOVEL FUNC
+let shovelSelect = document.getElementById('shovel');
+shovelSelect.addEventListener('click', shovel);
+
+function shovel(){
+    console.log('here')
+    let soilSelect = document.querySelectorAll('#soil');
+    let grasSelect = document.querySelectorAll('#grass');
+    for (let i = 0; i < soilSelect.length; i++) {
+        soilSelect[i].addEventListener('click',(event) =>{
+         if(event.target.id) {
+            soilSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
+             document.querySelector('.inventory').style.background= "url(./img/soil.png)no-repeat center center/cover";
+         }       
+    });
+    }
+    for (let i = 0; i < grasSelect.length; i++) {
+        grasSelect[i].addEventListener('click',(event) =>{
+         if(event.target.id) {
+            grasSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
+             document.querySelector('.inventory').style.background= "url(./img/grass.png)no-repeat center center/cover";
+         }       
+});
+    }
+}
 
 
 

@@ -56,33 +56,33 @@ for (let row = 0; row < matrix.length; row++) {
                 tile.setAttribute("id", "cloud");
                 break
         }
-         container.appendChild(tile)
+         container.appendChild(tile);
     }
 }
 
 // -----------------TOOLS--------------------------------
-let tools= ['axe','pickaxe', 'shovel']
+let tools= ['axe','pickaxe', 'shovel'];
 let toolbar = document.querySelector('.toolbar');
-let toolTitle = document.createElement('div')
+let toolTitle = document.createElement('div');
 toolTitle.classList.add('tool-title');
 toolTitle.innerHTML= "Tools";
-toolbar.appendChild(toolTitle)
+toolbar.appendChild(toolTitle);
 
 for (let i = 0; i < tools.length; i++) {
     let tool = document.createElement('div');
-    tool.classList.add('tool')
-    tool.setAttribute("id",tools[i])
-   toolbar.appendChild(tool)
+    tool.classList.add('tool');
+    tool.setAttribute("id",tools[i]);
+   toolbar.appendChild(tool);
 }
 
 let title = document.createElement('div')
 title.classList.add('inventory-title');
 title.innerHTML= "Inventory";
-toolbar.appendChild(title)
+toolbar.appendChild(title);
 
 let inventory = document.createElement('div');
-inventory.classList.add('inventory')
-toolbar.appendChild(inventory)
+inventory.classList.add('inventory');
+toolbar.appendChild(inventory);
 
 // --------------------------Functions----------------------
 // AXE FUNC
@@ -96,16 +96,20 @@ function axe(){
     for (let i = 0; i < treeTrunckSelect.length; i++) {
         treeTrunckSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
-            treeTrunckSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
-             document.querySelector('.inventory').style.background= "url(./img/treeTrunck.png)no-repeat center center/cover";
+            treeTrunckSelect[i].removeAttribute('id', 'treetrunk');
+            treeTrunckSelect[i].setAttribute('id', 'sky');
+             document.querySelector('.inventory').setAttribute('id', 'treetrunk');
+             document.querySelector('#treetrunk').removeEventListener('click', axe);
          }       
     });
-    }
+    } 
     for (let i = 0; i < treeBranchSelect.length; i++) {
         treeBranchSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
-            treeBranchSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
-             document.querySelector('.inventory').style.background= "url(./img/treeBranch.png)no-repeat center center/cover";
+            treeBranchSelect[i].removeAttribute('id', 'treebranch');
+            treeBranchSelect[i].setAttribute('id', 'sky');
+             document.querySelector('.inventory').setAttribute('id', 'treebranch');
+             document.querySelector('#treebranch').removeEventListener('click', axe);
          }       
 });
     }
@@ -121,8 +125,10 @@ function pickaxe(){
     for (let i = 0; i < stoneSelect.length; i++) {
         stoneSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
-            stoneSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
-             document.querySelector('.inventory').style.background= "url(./img/stone.png)no-repeat center center/cover";
+            stoneSelect[i].removeAttribute('id', 'stone');
+            stoneSelect[i].setAttribute('id', 'sky');
+             document.querySelector('.inventory').setAttribute('id', 'stone');
+             document.querySelector('#stone').removeEventListener('click', pickaxe);
          }       
     });
     }
@@ -140,16 +146,20 @@ function shovel(){
     for (let i = 0; i < soilSelect.length; i++) {
         soilSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
-            soilSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
-             document.querySelector('.inventory').style.background= "url(./img/soil.png)no-repeat center center/cover";
+            soilSelect[i].removeAttribute('id', 'soil');
+            soilSelect[i].setAttribute('id', 'sky');
+             document.querySelector('.inventory').setAttribute('id', 'soil');
+             document.querySelector('#soil').removeEventListener('click', shovel);
          }       
     });
     }
     for (let i = 0; i < grasSelect.length; i++) {
         grasSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
-            grasSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
-             document.querySelector('.inventory').style.background= "url(./img/grass.png)no-repeat center center/cover";
+            grasSelect[i].removeAttribute('id', 'grass');
+            grasSelect[i].setAttribute('id', 'sky');
+             document.querySelector('.inventory').setAttribute('id', 'grass');
+             document.querySelector('#grass').removeEventListener('click', shovel);
          }       
 });
     }

@@ -92,6 +92,7 @@ axeChoose.addEventListener('click', axe);
 function axe(){
     console.log('here')
     let treeTrunckSelect = document.querySelectorAll('#treetrunk');
+    let treeBranchSelect = document.querySelectorAll('#treebranch');
     for (let i = 0; i < treeTrunckSelect.length; i++) {
         treeTrunckSelect[i].addEventListener('click',(event) =>{
          if(event.target.id) {
@@ -100,7 +101,16 @@ function axe(){
          }       
     });
     }
+    for (let i = 0; i < treeBranchSelect.length; i++) {
+        treeBranchSelect[i].addEventListener('click',(event) =>{
+         if(event.target.id) {
+            treeBranchSelect[i].style.background= "url(./img/sky.png)no-repeat center center/cover";
+             document.querySelector('.inventory').style.background= "url(./img/treeBranch.png)no-repeat center center/cover";
+         }       
+});
+    }
 }
+
 // PICKAXE FUNC
 let pickaxeTool = document.getElementById('pickaxe');
 pickaxeTool.addEventListener('click', pickaxe);
@@ -116,6 +126,7 @@ function pickaxe(){
          }       
     });
     }
+    
 }
 
 // SHOVEL FUNC

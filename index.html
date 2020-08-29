@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./welcome.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;669;700;800;900&display=swap" rel="stylesheet">
-    <title>Minecraft</title>
+    <title>Welcome</title>
 </head>
 <body>
-   <div class="container"></div>
-    <div class="toolbar"></div>
-    <script src="./script.js"></script>
+    <div class="container">
+ <div class="instructions">
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae odit, natus corporis quo quod voluptas unde commodi quibusdam modi maxime inventore quaerat cum dolorum sit, culpa deleniti eos perferendis, asperiores quasi officia rem consequuntur minus illum ipsum. Maiores in numquam sapiente ex fugit dolore ipsum, commodi omnis dignissimos impedit ea</p>
+     <button class="btn">Start</button>
+ </div>
+</div>
+<script>
+    let button = document.querySelector('.btn');
+    button.addEventListener('click', function(){
+    location.href= 'game.html';
+});
+</script>
 </body>
 </html>
